@@ -1,0 +1,33 @@
+[
+  {
+  "placeImage": "images/McDuckLogo.jpg",
+  "placeName": "McDuck",
+  "placeItems": ["American", "Fast Food"],
+  "minOrder": 1
+
+  },
+
+  {
+    "placeImage": "images/SushiCircleLogo.jpg",
+    "placeName": "Sushi Circle",
+    "placeItems": ["Japanese", "Sushi"],
+    "minOrder": 1
+  
+  },
+  
+  {
+    "placeImage": "images/KoalaExpressLogo.jpg",
+    "placeName": "Koala Express",
+    "placeItems": ["Chinese", "Fast Food"],
+    "minOrder": 1
+  
+  },
+
+  {
+    "placeImage": "images/OutNInLogo.jpg",
+    "placeName": "Out-N-In",
+    "placeItems": ["American", "Fast Food"],
+    "minOrder": 1
+  
+  }
+]
