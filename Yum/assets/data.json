@@ -1,8 +1,8 @@
 [
   {
   "placeImage": "images/McDuckLogo.jpg",
-  "placeName": "McDuck",
-  "placeItems": ["American", "Fast Food"],
+  "placeName": "The McDuck",
+  "placeItems": ["American", "Fast Food", "Burgers"],
   "minOrder": 1
 
   },
@@ -10,7 +10,7 @@
   {
     "placeImage": "images/SushiCircleLogo.jpg",
     "placeName": "Sushi Circle",
-    "placeItems": ["Japanese", "Sushi"],
+    "placeItems": ["Japanese", "Sushi", "Asian", "Alcohol"],
     "minOrder": 1
   
   },
@@ -18,15 +18,15 @@
   {
     "placeImage": "images/KoalaExpressLogo.jpg",
     "placeName": "Koala Express",
-    "placeItems": ["Chinese", "Fast Food"],
+    "placeItems": ["Chinese", "Fast Food", "Asian"],
     "minOrder": 1
   
   },
 
   {
     "placeImage": "images/OutNInLogo.jpg",
-    "placeName": "Out-N-In",
-    "placeItems": ["American", "Fast Food"],
+    "placeName": "Goin' Out-N-In",
+    "placeItems": ["American", "Fast Food", "Burgers"],
     "minOrder": 1
   
   }
