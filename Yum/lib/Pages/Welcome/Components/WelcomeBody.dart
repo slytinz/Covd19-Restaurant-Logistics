@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yum/Components/buttons.dart';
-import 'package:yum/Pages/Welcome/WelcomeBG.dart';
+import 'package:yum/Pages/GlobalComponents/buttons.dart';
+import 'package:yum/Pages/Login/LoginScreen.dart';
+import 'package:yum/Pages/Welcome/Components/WelcomeBG.dart';
 import 'package:yum/constants.dart';
 
 class WelcomeBody extends StatelessWidget {
@@ -17,17 +18,29 @@ class WelcomeBody extends StatelessWidget {
           children: <Widget>[
             // Welcome Sign
             Padding(
-              padding: const EdgeInsets.only(top: 150, bottom: 50),
+              padding: const EdgeInsets.only(top: 170, bottom: 30),
               child: Text(
                 "LET'S GET EATIN'!",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    fontFamily: "Oswald"),
               ),
             ),
             SizedBox(height: size.height * 0.02),
-            // Button for Login
+            // Button for clicks to go to Login Page
             LoginSignUpButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
             // Button for Sign Up
             LoginSignUpButton(

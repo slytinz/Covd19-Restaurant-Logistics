@@ -57,7 +57,7 @@ flutter:
     - assets/data.json
     - assets/images/
     - assets/icons/mouthMainLogo2.png
-    - assets/icons/
+    - assets/icons/yellowBGLogo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -74,6 +74,30 @@ flutter:
     - family: Permanent Marker
       fonts:
         - asset: assets/fonts/PermanentMarker-Regular.ttf
+
+    - family: PaytoneOne
+      fonts:
+        - asset: assets/fonts/PaytoneOne-Regular.ttf
+    - family: Playfair Display
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Black.ttf
+        - asset: assets/fonts/PlayfairDisplay-Medium.ttf
+        - asset: assets/fonts/PlayfairDisplay-Regular.ttf
+    - family: Faster One
+      fonts:
+        - asset: assets/fonts/FasterOne-Regular.ttf
+    - family: Concert One
+      fonts:
+        - asset: assets/fonts/ConcertOne-Regular.ttf
+    - family: Oswald
+      fonts:
+        - asset: assets/fonts/Oswald-Medium.ttf
+        - asset: assets/fonts/Oswald-Light.ttf
+        - asset: assets/fonts/Oswald-Regular.ttf
+    - family: Passion One
+      fonts:
+        - asset: assets/fonts/PassionOne-Regular.ttf
+
     # - family: Schyler
     #   fonts:
     #     - asset: fonts/Schyler-Regular.ttf
