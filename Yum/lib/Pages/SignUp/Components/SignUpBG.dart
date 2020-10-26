@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginBackground extends StatelessWidget {
+class SignUpBackground extends StatelessWidget {
   final Widget child;
-  const LoginBackground({
+  const SignUpBackground({
     Key key,
     @required this.child,
   }) : super(key: key);
@@ -11,19 +11,19 @@ class LoginBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: double.infinity,
       height: size.height,
+      width: double.infinity,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-            top: 85,
+            top: 65,
             child: Image.asset("assets/icons/mouthMainLogo2.png",
-                width: size.width / 2),
+                width: size.width / 3),
           ),
           // Two tone background
           Positioned(
-            top: 300,
+            top: 210,
             child:
                 Image.asset("assets/icons/yellowBGLogo.jpg", width: size.width),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yum/Pages/GlobalComponents/buttons.dart';
+import 'package:yum/Pages/GlobalComponents/ButtonsAndCustomization.dart';
 import 'package:yum/Pages/Login/LoginScreen.dart';
+import 'package:yum/Pages/SignUp/SignUpScreen.dart';
 import 'package:yum/Pages/Welcome/Components/WelcomeBG.dart';
 import 'package:yum/constants.dart';
 
@@ -44,10 +45,18 @@ class WelcomeBody extends StatelessWidget {
             ),
             // Button for Sign Up
             LoginSignUpButton(
-              text: "SIGN UP",
-              color: kPrimaryButtonAltColor,
-              press: () {},
-            )
+                text: "SIGN UP",
+                color: kPrimaryButtonAltColor,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignUpScreen();
+                      },
+                    ),
+                  );
+                })
           ],
         ),
       ),

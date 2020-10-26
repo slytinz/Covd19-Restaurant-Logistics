@@ -33,9 +33,11 @@ class InputTextField extends StatelessWidget {
 
 class InputPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final hint;
   const InputPasswordField({
     Key key,
     this.onChanged,
+    this.hint,
   }) : super(key: key);
 
   @override
@@ -46,7 +48,7 @@ class InputPasswordField extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: "Password",
+          hintText: hint,
           icon: Icon(
             Icons.lock,
             color: kPrimaryIconColor,

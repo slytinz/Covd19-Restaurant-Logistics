@@ -34,3 +34,41 @@ class LoginSignUpButton extends StatelessWidget {
     );
   }
 }
+
+class OrDivider extends StatelessWidget {
+  const OrDivider({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width * 0.8,
+      child: Row(
+        children: <Widget>[
+          buildDivider(),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "OR",
+              style: TextStyle(
+                color: kPrimaryButtonColor,
+                fontFamily: "Oswald",
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          buildDivider(),
+        ],
+      ),
+    );
+  }
+
+  Expanded buildDivider() {
+    return Expanded(
+      child: Divider(
+        color: kPrimaryButtonColor,
+        height: 1.5,
+      ),
+    );
+  }
+}
