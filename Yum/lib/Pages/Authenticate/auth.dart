@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yum/Pages/Authenticate/Log_In.dart';
+import 'package:yum/Pages/Authenticate/RegisterAccount.dart';
 
 class Authenticate extends StatefulWidget {
   Authenticate({Key key}) : super(key: key);
@@ -9,10 +10,17 @@ class Authenticate extends StatefulWidget {
 }
 
 class _AuthenticateState extends State<Authenticate> {
+  bool showSignIn = true;
+  void toggleView() {
+    setState(() => showSignIn = !showSignIn);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: LogIn(),
-    );
+    if (showSignIn) {
+      return LogIn(toggleView: toggleView);
+    } else {
+      return RegisterAccount(toggleView: toggleView);
+    }
   }
 }

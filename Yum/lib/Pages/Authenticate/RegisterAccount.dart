@@ -1,40 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:yum/Services/AuthService.dart';
+import 'package:yum/constants.dart';
 
-import '../../constants.dart';
-
-class LogIn extends StatefulWidget {
+class RegisterAccount extends StatefulWidget {
   final Function toggleView;
-  LogIn({this.toggleView});
+  RegisterAccount({this.toggleView});
 
   @override
-  _LogInState createState() => _LogInState();
+  _RegisterAccountState createState() => _RegisterAccountState();
 }
 
-class _LogInState extends State<LogIn> {
+class _RegisterAccountState extends State<RegisterAccount> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
   //Text Field State
   String email = "";
   String password = "";
+  String error = "";
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kPrimaryLightColor,
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text("Sign In to Yum"),
+        title: Text("Sign up to Yum!"),
         actions: <Widget>[
           FlatButton.icon(
             onPressed: () {
               widget.toggleView();
             },
             icon: Icon(Icons.fastfood),
-            label: Text("Don't Have an Account?"),
+            label: Text("Sign In"),
           ),
         ],
       ),
@@ -46,6 +45,25 @@ class _LogInState extends State<LogIn> {
           key: _formKey,
           child: Column(
             children: <Widget>[
+              // //Restaurant Name
+              // SizedBox(height: 20),
+              // TextFormField(
+              //   onChanged: (val) {
+              //     //Get the value from the form  email field
+              //     setState(() => email = val);
+              //   },
+              // ),
+
+              // //Owner name
+              // SizedBox(height: 20),
+              // TextFormField(
+              //   onChanged: (val) {
+              //     //Get the value from the form  email field
+              //     setState(() => email = val);
+              //   },
+              // ),
+
+              //Restaurant email
               SizedBox(height: 20),
               TextFormField(
                 validator: (val) => val.isEmpty ? 'Enter an Email!' : null,
@@ -54,33 +72,56 @@ class _LogInState extends State<LogIn> {
                   setState(() => email = val);
                 },
               ),
+
+              //Password
               SizedBox(height: 20),
               TextFormField(
-                obscureText: true,
                 validator: (val) => val.length < 6
                     ? 'Password must be 6+ characters long!'
                     : null,
+                obscureText: true,
                 onChanged: (val) {
                   //Get the value from the password field
                   setState(() => password = val);
                 },
               ),
+
+              //Confirm password
+              // SizedBox(height: 20),
+              // TextFormField(
+              //   validator: (val) => val.length < 6
+              //       ? 'Password must be 6+ characters long!'
+              //       : null,
+              //   obscureText: true,
+              //   onChanged: (val) {
+              //     //Get the value from the password field
+              //     setState(() => password = val);
+              //   },
+              // ),
               SizedBox(
                 height: 20,
               ),
               RaisedButton(
                 color: kPrimaryButtonColor,
                 child: Text(
-                  "Sign In",
+                  "Register",
                   style: TextStyle(color: kPrimaryTextBox),
                 ),
                 onPressed: () async {
-                  // Checks if the account is valid (email not empty and password long enough)
+                  // Checks if the account is valid (email not empty and password long
                   if (_formKey.currentState.validate()) {
-                    print(email);
-                    print(password);
+                    dynamic result =
+                        await _auth.AccountRegistration(email, password);
+                    if (result == null) {
+                      setState(() => error = "Please supply valid email...");
+                    }
                   }
                 },
+              ),
+              SizedBox(height: 12),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14),
               ),
             ],
           ),
@@ -89,34 +130,3 @@ class _LogInState extends State<LogIn> {
     );
   }
 }
-
-//   Stack(
-// alignment: Alignment.center,
-// children: <Widget>[
-//   Positioned(
-//     top: 85,
-//     child: Image.asset("assets/icons/mouthMainLogo2.png",
-//         width: size.width / 2),
-//   ),
-//   // Two tone background
-//   Positioned(
-//     top: 300,
-//     child: Image.asset("assets/icons/yellowBGLogo.jpg",
-//         width: size.width),
-//   ),
-//     // Summons the buttons
-//   ],
-// ),
-
-//ANON sign in button
-// RaisedButton(
-//   child: Text("Sign In Anon"),
-//   onPressed: () async {
-//     dynamic result = await _auth.signInAnon();
-//     if (result == null) {
-//       print("Error Signing In");
-//     } else {
-//       print("Signed in");
-//       print(result.uid);
-//     }
-//   },
