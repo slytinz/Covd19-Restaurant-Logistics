@@ -4,7 +4,6 @@ import 'package:yum/Pages/GlobalComponents/ButtonsAndCustomization.dart';
 import 'package:yum/Pages/GlobalComponents/InputTextField.dart';
 import 'package:yum/Pages/Login/LoginScreen.dart';
 import 'package:yum/Pages/SignUp/Components/SignUpBG.dart';
-import 'package:yum/constants.dart';
 
 class SignUpBody extends StatelessWidget {
   const SignUpBody({

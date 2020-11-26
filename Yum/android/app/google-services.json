@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "919682997549",
+    "firebase_url": "https://yum-project.firebaseio.com",
+    "project_id": "yum-project",
+    "storage_bucket": "yum-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919682997549:android:d57cf4e594f0c5824f07a4",
+        "android_client_info": {
+          "package_name": "com.tiffannyhernaez.yum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919682997549-km09sie3qnhsd7ckss98m90766ltk8rd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJQ2oOo1oy1eNh-tP90p7AiNHrCnqJg4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919682997549-km09sie3qnhsd7ckss98m90766ltk8rd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
