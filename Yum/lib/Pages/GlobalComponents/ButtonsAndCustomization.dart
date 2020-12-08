@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:yum/constants.dart';
 
-class LoginSignUpButton extends StatelessWidget {
+class Button extends StatelessWidget {
   final String text;
   final Function press;
   final Color color, textColor;
-  const LoginSignUpButton({
+  const Button({
     Key key,
     this.text,
     this.press,
@@ -20,14 +20,15 @@ class LoginSignUpButton extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 5),
       width: size.width * 0.8,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(20),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+          padding: EdgeInsets.symmetric(vertical: 30, horizontal: 50),
           color: color,
           onPressed: press,
           child: Text(
             text,
-            style: TextStyle(color: textColor),
+            style:
+                TextStyle(color: textColor, fontSize: 25, fontFamily: "Oswald"),
           ),
         ),
       ),

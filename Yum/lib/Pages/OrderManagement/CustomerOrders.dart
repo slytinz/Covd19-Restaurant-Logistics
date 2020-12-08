@@ -2,25 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:yum/Services/AuthService.dart';
 import 'package:yum/constants.dart';
 
-class Home extends StatelessWidget {
-  // const Home({Key key}) : super(key: key);
-
-  final AuthService _auth = AuthService();
-
+class CustomerOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
+    final AuthService _auth = AuthService();
+
+    print("building CustomerOrder");
     return Scaffold(
-      backgroundColor: kPrimaryColor,
       appBar: AppBar(
         title: Text(
-          'YUM',
+          "ORDERS",
           style: TextStyle(
-              color: Color(0xFF171311), fontSize: 50, fontFamily: "Faster One"),
+              color: Color(0xFF171311), fontSize: 30, fontFamily: "Faster One"),
         ),
-        backgroundColor: kPrimaryTextBox,
+        backgroundColor: kPrimaryButtonColor,
         elevation: 0.0,
         actions: <Widget>[
+          // action button
           FlatButton.icon(
             icon: Icon(Icons.fastfood_outlined),
             label: Text('Logout'),
@@ -29,6 +27,9 @@ class Home extends StatelessWidget {
             },
           ),
         ],
+      ),
+      body: Center(
+        child: Text("CUSTOMER ORDERS"),
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:yum/constants.dart';
 
-class LoginSignUpButton extends StatelessWidget {
+class Button extends StatelessWidget {
   final String text;
   final Function press;
   final Color color, textColor;
-  const LoginSignUpButton({
+  const Button({
     Key key,
     this.text,
     this.press,

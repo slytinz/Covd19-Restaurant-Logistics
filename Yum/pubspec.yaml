@@ -49,14 +49,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/McDuckLogo.jpg
-    - assets/images/SushiCircleLogo.jpg
-    - assets/images/KoalaExpressLogo.jpg
-    - assets/images/OutNInLogo.jpg
-    - assets/images/burger1.jpg
-    - assets/images/sushi1.jpg
-    - assets/images/friedrice1.jpg
-    - assets/images/fries1.jpg
+    - assets/images/monster.jpg
+    - assets/images/albacore.jpg
     - assets/data.json
     - assets/images/
     - assets/icons/mouthMainLogo2.png
