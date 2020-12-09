@@ -11,8 +11,8 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (_) => new FoodNotifier(),
           builder: (context) => FoodNotifier(),
-          create: (BuildContext context) {},
         )
       ],
       child: MyApp(),
