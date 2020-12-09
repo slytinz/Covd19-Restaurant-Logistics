@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yum/Pages/MenuService/FoodForm.dart';
 import 'package:yum/Pages/MenuService/FoodNotif.dart';
 import 'package:provider/provider.dart';
 import 'package:yum/Pages/MenuService/MenuDetails.dart';
@@ -26,28 +27,28 @@ class _MenuState extends State<Menu> {
     final AuthService _auth = AuthService();
     FoodNotifier foodNotif = Provider.of<FoodNotifier>(context);
 
-    print("building Feed");
+    print("Menu");
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "MENU",
           style: TextStyle(
-              color: Color(0xFF171311), fontSize: 30, fontFamily: "Faster One"),
+              color: Color(0xFF171311),
+              fontSize: 30,
+              fontFamily: "Permanent Marker"),
         ),
         backgroundColor: kPrimaryButtonColor,
         elevation: 0.0,
         actions: <Widget>[
           // action button
-          FlatButton.icon(
-            icon: Icon(Icons.fastfood_outlined),
-            label: Text('Logout'),
-            onPressed: () async {
-              await _auth.signout();
-            },
-          ),
+          // FlatButton.icon(
+          //   icon: Icon(Icons.fastfood_outlined),
+          //   label: Text('EDIT'),
+          //   onPressed: () async {},
+          // ),
         ],
       ),
-      backgroundColor: kPrimaryLightColor,
+      backgroundColor: kPrimaryColor,
       body: ListView.separated(
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
@@ -80,6 +81,19 @@ class _MenuState extends State<Menu> {
             color: Colors.black,
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          foodNotif.currentFood = null;
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context) {
+            return FoodForm(
+              update: false,
+            );
+          }));
+        },
+        child: Icon(Icons.add),
+        foregroundColor: Colors.white,
       ),
     );
   }
