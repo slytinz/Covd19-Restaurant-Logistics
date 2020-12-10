@@ -36,7 +36,7 @@ class Home extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 150),
             ),
             Button(
               text: "MENU SERVICE",
@@ -72,19 +72,6 @@ class Home extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) {
                       return CustomerCheckIn();
-                    },
-                  ),
-                );
-              },
-            ),
-            Button(
-              text: "LOGISTICS",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Logistics();
                     },
                   ),
                 );

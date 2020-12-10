@@ -3,10 +3,8 @@ import 'package:yum/Pages/MenuService/FoodForm.dart';
 import 'package:yum/Pages/MenuService/FoodNotif.dart';
 import 'package:provider/provider.dart';
 import 'package:yum/Pages/MenuService/MenuDetails.dart';
-import 'package:yum/Services/AuthService.dart';
 import 'package:yum/Services/MenuService.dart';
 import 'package:yum/constants.dart';
-// import 'package:yum/models/MenuItem.dart';
 
 class Menu extends StatefulWidget {
   Menu({Key key}) : super(key: key);
@@ -24,7 +22,6 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-    final AuthService _auth = AuthService();
     FoodNotifier foodNotif = Provider.of<FoodNotifier>(context);
 
     print("Menu");
@@ -39,21 +36,15 @@ class _MenuState extends State<Menu> {
         ),
         backgroundColor: kPrimaryButtonColor,
         elevation: 0.0,
-        actions: <Widget>[
-          // action button
-          // FlatButton.icon(
-          //   icon: Icon(Icons.fastfood_outlined),
-          //   label: Text('EDIT'),
-          //   onPressed: () async {},
-          // ),
-        ],
       ),
       backgroundColor: kPrimaryColor,
       body: ListView.separated(
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: Image.network(
-              foodNotif.foodList[index].image,
+              foodNotif.foodList[index].image != null
+                  ? foodNotif.foodList[index].image
+                  : 'https://media.discordapp.net/attachments/460202875851767808/786416323890249788/mouthMainLogo2.png',
               width: 120,
               fit: BoxFit.fitWidth,
             ),

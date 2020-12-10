@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:yum/Pages/MenuService/FoodNotif.dart';
+import 'package:yum/Services/MenuService.dart';
 import 'package:yum/constants.dart';
 import 'package:yum/models/MenuItem.dart';
 
@@ -78,7 +79,7 @@ class _FoodFormState extends State<FoodForm> {
 
     _currFood.subIngredients = _ingredients;
 
-    uploadFoodAndImage(_currFood, widget.update, _imgFile, _onFoodUploaded);
+    uploadFood(_currFood, widget.update, _imgFile);
 
     print("name: ${_currFood.name}");
     print("category: ${_currFood.category}");
@@ -239,14 +240,6 @@ class _FoodFormState extends State<FoodForm> {
         ),
         backgroundColor: kPrimaryButtonColor,
         elevation: 0.0,
-        actions: <Widget>[
-          // action button
-          // FlatButton.icon(
-          //   icon: Icon(Icons.fastfood_outlined),
-          //   label: Text('EDIT'),
-          //   onPressed: () async {},
-          // ),
-        ],
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

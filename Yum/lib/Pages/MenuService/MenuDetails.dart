@@ -7,7 +7,7 @@ import 'package:yum/constants.dart';
 class FoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    FoodNotifier foodNotif = Provider.of<FoodNotifier>(context, listen: false);
+    FoodNotifier foodNotif = Provider.of<FoodNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,7 +24,9 @@ class FoodDetail extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
-              Image.network(foodNotif.currentFood.image),
+              Image.network(foodNotif.currentFood.image != null
+                  ? foodNotif.currentFood.image
+                  : 'https://media.discordapp.net/attachments/460202875851767808/786416323890249788/mouthMainLogo2.png'),
               SizedBox(height: 32),
               Text(
                 foodNotif.currentFood.name,
